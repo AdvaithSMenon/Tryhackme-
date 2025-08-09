@@ -1,10 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My TryHackMe Badge</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My TryHackMe Badge</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Courier New', monospace;
+        background: radial-gradient(circle at top, #2a003f, #0d001a);
+        color: #e0b3ff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    /* Animated cyber background */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.02) 0px,
+            rgba(255,255,255,0.02) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+        animation: scanlines 6s linear infinite;
+        z-index: 0;
+    }
+
+    @keyframes scanlines {
+        0% { background-position: 0 0; }
+        100% { background-position: 0 100%; }
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+        text-shadow: 0 0 5px #b84dff, 0 0 15px #a600ff, 0 0 30px #ff00ff;
+        animation: glowPulse 2s infinite alternate;
+        position: relative;
+        z-index: 1;
+    }
+
+    @keyframes glowPulse {
+        from { text-shadow: 0 0 5px #b84dff, 0 0 15px #a600ff, 0 0 30px #ff00ff; }
+        to { text-shadow: 0 0 10px #ff80ff, 0 0 25px #d966ff, 0 0 40px #ff00ff; }
+    }
+
+    iframe {
+        border: none;
+        width: 420px;
+        height: 300px;
+        border-radius: 12px;
+        background: rgba(20, 0, 30, 0.6);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 0 15px #a600ff, 0 0 40px #b84dff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeInUp 1s ease-out;
+        position: relative;
+        z-index: 1;
+    }
+
+    iframe:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px #d966ff, 0 0 50px #ff00ff;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+        position: absolute;
+        bottom: 15px;
+        font-size: 0.85rem;
+        opacity: 0.8;
+        color: #c699ff;
+        letter-spacing: 1px;
+        z-index: 1;
+    }
+</style>
 </head>
 <body>
-    <h1>My Cybersecurity Progress 🚀</h1>
-    <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4779203" style="border:none;"></iframe>
+    <h1>Cybersecurity Progress ⚡💜</h1>
+    <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4779203"></iframe>
+    <footer>root@advaith:~$ Stay Curious_</footer>
 </body>
 </html>
